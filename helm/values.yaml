@@ -1,12 +1,12 @@
 namespace:
-  name: sandbox
- 
+  name: development
+
 service:
-  port: 7111
-  type: NodePort
+  nodePortHttp: 30020 
+  nodePortHttps: 30021
 
 image:
-  repository: oyelowo/tech-trends1
+  repository: oyelowo/tech-trends-app
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -17,4 +17,5 @@ resources:
     cpu: 50m
     memory: 256Mi
 
-hostPathName: /mnt/data/development/database.db
+hostPath:
+  path: /mnt/data/development/database.db

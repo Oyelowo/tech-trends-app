@@ -27,6 +27,8 @@ spec:
       - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         name: tech-trends
+        resources:
+{{ toYaml .Values.resources | indent 12 }}
         livenessProbe:
           httpGet:
             path: /status/healthcheck
@@ -49,8 +51,6 @@ spec:
       volumes:
       - name: sqlitedb
         hostPath:
-          path: {{ .Values.hostPath.hostPathName }}
+          path: {{ .Values.hostPath.path }}
           type: FileOrCreate
 
-        resources:
-{{ toYaml .Values.resources | indent 12 }}

@@ -12,12 +12,12 @@ spec:
     port: 3111
     protocol: TCP
     targetPort: 3111
-    nodePort: 30020
+    nodePort: {{ .Values.service.nodePortHttp }}
   - name: https
     port: 443
     protocol: TCP
-    targetPort: 3111s
-    nodePort: 30021
+    targetPort: 3111
+    nodePort: {{ .Values.service.nodePortHttps }}
   selector:
     app: tech-trends
   sessionAffinity: None

@@ -1,8 +1,12 @@
 namespace:
   name: production
 
+service:
+  nodePortHttp: 30040 
+  nodePortHttps: 30041
+
 image:
-  repository: oyelowo/tech-trends1
+  repository: oyelowo/tech-trends-app
   tag: latest
   pullPolicy: IfNotPresent
 
@@ -13,4 +17,5 @@ resources:
     cpu: 60m
     memory: 256Mi
 
-hostPathName: /mnt/data/production/database.db
+hostPath:
+  path: /mnt/data/production/database.db
