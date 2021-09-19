@@ -1,0 +1,16 @@
+namespace:
+  name: production
+
+image:
+  repository: oyelowo/tech-trends1
+  tag: latest
+  pullPolicy: IfNotPresent
+
+replicaCount: 3
+
+resources:
+  requests:
+    cpu: 60m
+    memory: 256Mi
+
+hostPathName: /mnt/data/production/database.db

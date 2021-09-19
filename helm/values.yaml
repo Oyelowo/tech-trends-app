@@ -1,0 +1,20 @@
+namespace:
+  name: sandbox
+ 
+service:
+  port: 7111
+  type: NodePort
+
+image:
+  repository: oyelowo/tech-trends1
+  tag: latest
+  pullPolicy: IfNotPresent
+
+replicaCount: 2
+
+resources:
+  requests:
+    cpu: 50m
+    memory: 256Mi
+
+hostPathName: /mnt/data/development/database.db

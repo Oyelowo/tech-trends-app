@@ -1,0 +1,20 @@
+namespace:
+  name: staging
+ 
+service:
+  port: 7111
+  type: LoadBalancer
+
+image:
+  repository: oyelowo/tech-trends1
+  tag: latest
+  pullPolicy: IfNotPresent
+
+replicaCount: 2
+
+resources:
+  requests:
+    cpu: 45m
+    memory: 256Mi
+
+hostPathName: /mnt/data/staging/database.db
