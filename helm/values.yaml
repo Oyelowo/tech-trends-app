@@ -1,21 +1,16 @@
 namespace:
   name: development
-
 service:
-  nodePortHttp: 30020 
+  nodePortHttp: 30020
   nodePortHttps: 30021
-
 image:
-  repository: oyelowo/tech-trends-app
-  tag: latest
+  repository: oyelowo/techtrends
+  tag: "master-63665108cb61b7d3a744caedeacb8f60752cf71d"
   pullPolicy: IfNotPresent
-
 replicaCount: 2
-
 resources:
   requests:
     cpu: 50m
     memory: 256Mi
-
 hostPath:
   path: /mnt/data/development/database.db

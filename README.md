@@ -7,7 +7,15 @@
 3. make yourself a super user
 `sudo su`
 
-4. make the deploy script executable and run the script. This launches argocd resources and kubenet resources for the application
+4. create host path for volume(developement, staging and production) in the virtual machine
+```
+function mkfile() { mkdir -p -- "$1" && touch -- "$1"/"$2";}
+mkfile /mnt/data/development database.db
+mkfile /mnt/data/staging database.db
+mkfile /mnt/data/production database.db
+```
+
+5. make the deploy script executable and run the script. This launches argocd resources and kubenet resources for the application
 ```sh
 chmod +x ./argocd/deploy_apps.sh
 ./argocd/deploy_apps.sh
@@ -38,3 +46,4 @@ production:
 `192.168.50.4:30041/`
 
 aside: 192.168.50.4 is the IP of the virtual machine.(can be seen in Vagrantfile)
+

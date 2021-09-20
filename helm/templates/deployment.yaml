@@ -31,13 +31,13 @@ spec:
 {{ toYaml .Values.resources | indent 12 }}
         livenessProbe:
           httpGet:
-            path: /status/healthcheck
+            path: /healthz
             port: 3111
           initialDelaySeconds: 15
           timeoutSeconds: 10
         readinessProbe:
           httpGet:
-            path: /status/healthcheck
+            path: /healthz
             port: 3111
           initialDelaySeconds: 10
           timeoutSeconds: 10

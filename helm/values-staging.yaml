@@ -5,11 +5,6 @@ service:
   nodePortHttp: 30030 
   nodePortHttps: 30031
 
-image:
-  repository: oyelowo/tech-trends-app
-  tag: latest
-  pullPolicy: IfNotPresent
-
 replicaCount: 2
 
 resources:
