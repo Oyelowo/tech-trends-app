@@ -33,14 +33,14 @@ spec:
           httpGet:
             path: /healthz
             port: 3111
-          initialDelaySeconds: 15
-          timeoutSeconds: 10
+          initialDelaySeconds: 30
+          timeoutSeconds: 20
         readinessProbe:
           httpGet:
             path: /healthz
             port: 3111
-          initialDelaySeconds: 10
-          timeoutSeconds: 10
+          initialDelaySeconds: 20
+          timeoutSeconds: 20
         lifecycle:
           postStart:
             exec:

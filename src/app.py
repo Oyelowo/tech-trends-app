@@ -56,7 +56,7 @@ def index():
     connection = get_db_connection()
     posts = connection.execute('SELECT * FROM posts').fetchall()
     connection.close()
-    return render_template('index.html', posts=posts)
+    return render_template('index.html', posts=sorted(posts, key=lambda x: x["created"], reverse=True))
 
 # Define how each individual article is rendered 
 # If the post ID is not found a 404 page is shown
