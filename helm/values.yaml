@@ -5,7 +5,7 @@ service:
   nodePortHttps: 30021
 image:
   repository: oyelowo/techtrends
-  tag: "master-63665108cb61b7d3a744caedeacb8f60752cf71d"
+  tag: "master-b5af6a822f0b900f6fd65de1e4460ec62e50e7ac"
   pullPolicy: IfNotPresent
 replicaCount: 2
 resources:
