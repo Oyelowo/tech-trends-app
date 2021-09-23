@@ -36,12 +36,18 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
-      - name: Build and push
-        uses: docker/build-push-action@v2
-        with:
-          push: true
-          tags: ${{ env.IMAGE_WITH_TAG }}
+      # - name: Build and push
+      #   uses: docker/build-push-action@v2
+      #   with:
+      #     push: true
+      #     tags: ${{ env.IMAGE_WITH_TAG }}
 
+      - name: Build and push
+        run: |
+         docker -v
+         docker  build -t oyelowo/techtrends:latest -t oyelowo/techtrends:${{ env.IMAGE_TAG }} .
+         docker  push oyelowo/techtrends:latest
+         docker  push oyelowo/techtrends:${{ env.IMAGE_TAG }}
 
   update_image_version:
       name: Deploy
